@@ -1,23 +1,36 @@
-import logo from './logo.svg';
 import './App.css';
+import AddUser from './components/users/AddUser';
+import ShowUsers from './components/users/ShowUsers';
+import { useState } from 'react';
+
+// const INITIAL_USERS = [{
+//   id: 1,
+//   name: "admin",
+//   age: "27"
+// },
+// {
+//   id: 2,
+//   name: "Manmeet Devgun",
+//   age: "28"
+// }]
+
+const INITIAL_USERS = []
+
 
 function App() {
+  const [users, setUsers] = useState(INITIAL_USERS);
+
+  const processSubmittedData = (data) => {
+    data.id = users.length + 1;
+    setUsers(prevData => {
+      return [...prevData, data]
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <AddUser processSubmittedData={processSubmittedData}></AddUser>
+      <ShowUsers users={users}></ShowUsers>
     </div>
   );
 }
