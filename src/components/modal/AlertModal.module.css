@@ -1,0 +1,35 @@
+.alertmodal {
+    z-index: 100;
+    position: absolute;
+    height: 200px;
+    width: 600px;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 2rem;
+}
+.content {
+    font-family: sans-serif;
+    font-style: italic;
+    font-variant: small-caps;
+}
+
+.backdrop {
+    z-index: 10;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75);
+
+}

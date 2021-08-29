@@ -1,6 +1,7 @@
 import './App.css';
 import AddUser from './components/users/AddUser';
 import ShowUsers from './components/users/ShowUsers';
+import Card from './components/shared/Card';
 import { useState } from 'react';
 
 // const INITIAL_USERS = [{
@@ -31,6 +32,7 @@ function App() {
     <div>
       <AddUser processSubmittedData={processSubmittedData}></AddUser>
       <ShowUsers users={users}></ShowUsers>
+
     </div>
   );
 }

@@ -6,7 +6,7 @@ function ShowUsers(props) {
             {
                 props.users.map(user => {
                     return <div key={user.id} className="add-user-container">
-                        <label>Name : {user.name} ({user.age}) Years Old</label>
+                        <label>Name : {user.name} ({user.age}) Years Old Contact : {user.contact} , email : {user.email}</label>
                     </div>
                 })
             }
